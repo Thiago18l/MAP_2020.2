@@ -45,6 +45,13 @@ public class Discipline {
         this.NumberOfStudents += number;
     }
 
+    public String[] getAllStudents() {
+        String[] names = new String[estudantes.size()];
+        for (int i = 0; i < names.length; i++) {
+            names[i] = estudantes.get(i).getName();
+        }
+        return names;
+    }
     @Override
     public String toString() {
         return "\n" +
