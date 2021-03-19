@@ -34,13 +34,20 @@ public class Student {
         this.matricula = matricula;
     }
 
-    public String getHorarios() {
-        String n = "";
-        for (Discipline i : disciplines) {
-            n += i.getData().toString();
-            n += "/n";
+    public String[] getHorarios() {
+        String[] horarios = new String[disciplines.length];
+        for (int i = 0; i < horarios.length; i++) {
+            assert disciplines[i] != null;
+            horarios[i] = disciplines[i].getData();
         }
-        return n;
+        return horarios;
+    }
+    public String[] getDisciplinas() {
+        String[] nomes = new String[this.disciplines.length];
+        for (int i = 0; i < this.disciplines.length; i++) {
+            nomes[i] = disciplines[i].getName();
+        }
+        return nomes;
     }
     @Override
     public String toString() {
