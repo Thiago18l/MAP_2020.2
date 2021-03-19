@@ -1,6 +1,5 @@
 package entities;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,23 +25,22 @@ public class Teacher {
         ArrayList<Discipline> arrays = classes.get(matricula);
         return arrays;
     }
-    public String Disciplinas() {
+
+    public String[] Disciplinas() {
         ArrayList<Discipline> disciplinas = getDisciplinas();
         String[] turmas = new String[disciplinas.size()];
         for (int i = 0; i < disciplinas.size(); i++) {
             turmas[i] = disciplinas.get(i).getName();
         }
-        String n = "";
-        for(String i : turmas) {
-            n += i;
-            n += ", ";
-        }
-        return n;
+
+        return turmas;
     }
-    @Override
-    public String toString() {
-        return "Professor: " + name +
-                ",\nTurmas: " + Disciplinas() +
-                "\nSua matricula: " + matricula;
+        public String[] getHorario() {
+        ArrayList<Discipline> horarios = getDisciplinas();
+        String[] horario = new String[horarios.size()];
+        for (int i = 0; i < horarios.size(); i++) {
+            horario[i] = horarios.get(i).getData();
+        }
+        return horario;
     }
 }
