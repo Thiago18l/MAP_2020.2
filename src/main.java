@@ -2,7 +2,9 @@ import entities.Discipline;
 import entities.Student;
 import entities.Teacher;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class main {
     public static void main(String[] args) {
@@ -18,15 +20,20 @@ public class main {
         MAP.addStudent(Rafa);
         MAP.addStudent(Thiago);
         APS.addStudent(Thiago);
-        System.out.println(MAP.getStudent());
-        System.out.println(MAP.getQuantityOfStudents());
+       // System.out.println(MAP.getStudent());
+     //   System.out.println(MAP.getQuantityOfStudents());
 
         ArrayList<Discipline> disciplinasDoDrThiago = new ArrayList<>();
         disciplinasDoDrThiago.add(MAP);
         disciplinasDoDrThiago.add(APS);
         Teacher professor = new Teacher("Dr thiago", 123, disciplinasDoDrThiago);
 
-        System.out.println(professor.toString());
+
+        MAP.getStudent();
+        //Discipline[] DisiciplinasdeThiago = new Discipline[2];
+
+       // System.out.println(professor.toString());
+        System.out.println(MAP.getStudent());
 
     }
 }

@@ -26,7 +26,7 @@ public class Teacher {
         ArrayList<Discipline> arrays = classes.get(matricula);
         return arrays;
     }
-    private String Disciplinas() {
+    public String Disciplinas() {
         ArrayList<Discipline> disciplinas = getDisciplinas();
         String[] turmas = new String[disciplinas.size()];
         for (int i = 0; i < disciplinas.size(); i++) {
