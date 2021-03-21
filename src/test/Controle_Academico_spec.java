@@ -1,8 +1,9 @@
 package test;
-import static org.junit.jupiter.api.Assertions.*;
-import entities.Discipline;
-import entities.Student;
-import entities.Teacher;
+
+import controllers.GerenciamentoDiscipline;
+import controllers.GerenciamentoProfessor;
+import controllers.GerenciamentoStudent;
+import entities.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -22,7 +23,13 @@ public class Controle_Academico_spec {
     ArrayList<Discipline> disciplinasDoDrThiago = new ArrayList<>();
 
     Teacher professor = new Teacher("Dr thiago", 123, disciplinasDoDrThiago);
+    GerenciamentoProfessor gerenciamentoP = new GerenciamentoProfessor(professor);
 
+    GerenciamentoDiscipline gerenciamentoMAP = new GerenciamentoDiscipline(MAP);
+    GerenciamentoDiscipline gerenciamentoAPS = new GerenciamentoDiscipline(APS);
+
+    GerenciamentoStudent gerenciaRafa = new GerenciamentoStudent(Rafa);
+    GerenciamentoStudent gerenciaThiago = new GerenciamentoStudent(Thiago);
 
 
     @Test
@@ -32,7 +39,7 @@ public class Controle_Academico_spec {
         Discipline[] expected = new Discipline[2];
         expected[0] = MAP;
         expected[1] = APS;
-        String[] values = professor.Disciplinas();
+        String[] values = gerenciamentoP.Disciplinas();
 
         Assertions.assertEquals(expected[0].getName(), values[0]);
     }
@@ -43,12 +50,13 @@ public class Controle_Academico_spec {
         DisciplinasdeThiago[1] = APS;
         DisciplinasdeRafa[0] = MAP;
 
-        MAP.addStudent(Rafa);
-        MAP.addStudent(Thiago);
+        gerenciamentoMAP.addStudent(Rafa);
+        gerenciamentoMAP.addStudent(Thiago);
+
         String[] expected = new String[2];
         expected[0] = "Rafinha";
         expected[1] = "Thiago";
-        Assertions.assertArrayEquals(expected, MAP.getAllStudents());
+        Assertions.assertArrayEquals(expected,  gerenciamentoMAP.getAllStudents());
     }
     @Test
     public void HorariosDeUmProfessor () throws Exception {
@@ -56,7 +64,7 @@ public class Controle_Academico_spec {
         disciplinasDoDrThiago.add(APS);
         String[] expected = new String[1];
         expected[0] = "SEG 11:00";
-        String[] horarios = professor.getHorario();
+        String[] horarios = gerenciamentoP.getHorario();
         Assertions.assertEquals(expected[0], horarios[0]);
     }
     @Test
@@ -65,25 +73,26 @@ public class Controle_Academico_spec {
         DisciplinasdeThiago[1] = APS;
         DisciplinasdeRafa[0] = MAP;
         String expected = "MAP";
-        String[] disciplina = Rafa.getDisciplinas();
-        String[] disciplinaThiago = Thiago.getDisciplinas();
+        String[] disciplina = gerenciaRafa.getDisciplinas();
+        String[] disciplinaThiago = gerenciaThiago.getDisciplinas();
         Assertions.assertEquals(expected, disciplina[0]);
         Assertions.assertEquals(expected, disciplinaThiago[0]);
     }
     @Test
     public void NumeroDeAlunos () throws Exception {
-        MAP.addStudent(Rafa);
-        MAP.addStudent(Thiago);
-        assertEquals(2, MAP.getQuantityOfStudents());
+        gerenciamentoMAP.addStudent(Rafa);
+        gerenciamentoMAP.addStudent(Thiago);
+        Assertions.assertEquals(2, gerenciamentoMAP.getQuantityOfStudents());
     }
     @Test
     public void QuaisHorariosDeUmAluno () throws Exception {
         Discipline[] disciplinaJoao = new Discipline[1];
         disciplinaJoao[0] = new Discipline("BANCO DE DADOS", "QUARTA 7:00");
         Student Joao = new Student("Joao", 1, disciplinaJoao);
+        GerenciamentoStudent gerenciaJoao = new GerenciamentoStudent(Joao);
         String[] expected = new String[1];
         expected[0] = "QUARTA 7:00";
-        System.out.println(Arrays.toString(Joao.getHorarios()));
-        Assertions.assertArrayEquals(expected, Joao.getHorarios());
+        System.out.println(Arrays.toString(gerenciaJoao.getHorarios()));
+        Assertions.assertArrayEquals(expected, gerenciaJoao.getHorarios());
     }
 }
