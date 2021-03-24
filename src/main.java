@@ -21,7 +21,7 @@ public class main {
 
         //Alunos
         Student Rafa = new Student("Rafinha", 1, DisciplinasdeRafa);
-        Student Thiago = new Student("Thiago", 12, DisciplinasdeThiago);
+      //  Student Thiago = new Student("Thiago", 12, DisciplinasdeThiago);
 
         DisciplinasdeThiago[0] = MAP;
         DisciplinasdeThiago[1] = APS;
@@ -38,9 +38,9 @@ public class main {
 
 
         //Gerenciamento de disciplinas = Adição de alunos
-        gerenciamentoMAP.addStudent(Rafa);
-        gerenciamentoMAP.addStudent(Thiago);
-        gerenciamentoAPS.addStudent(Thiago);
+        gerenciamentoMAP.addStudent("Rafinha", 1, DisciplinasdeRafa);
+        gerenciamentoMAP.addStudent("Thiago", 12, DisciplinasdeThiago);
+        gerenciamentoAPS.addStudent("Thiago", 12, DisciplinasdeThiago);
 
 
         //Disciplinas do professor:

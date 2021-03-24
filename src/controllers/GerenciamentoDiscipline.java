@@ -14,8 +14,8 @@ public class GerenciamentoDiscipline {
         this.disciplina = disciplina;
     }
 
-    public void addStudent(Student estudante) {
-        estudantes.add(estudante);
+    public void addStudent(String nome, Integer matricula, Discipline[] disciplinas) {
+        estudantes.add(new Student(nome, matricula, disciplinas));
         this.NumberOfStudents += 1;
     }
     public ArrayList<Student> getStudent() {
