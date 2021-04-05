@@ -13,9 +13,7 @@ public class ProfessorTest {
     Discipline APS = new Discipline("APS", "QUI 7:00");
 
     ArrayList<Discipline> disciplinasDoDrThiago = new ArrayList<>();
-
-    Teacher professor = new Teacher("Dr thiago", 123, disciplinasDoDrThiago);
-    GerenciamentoProfessor gerenciamentoP = new GerenciamentoProfessor(professor);
+    GerenciamentoProfessor gerenciamentoP = new GerenciamentoProfessor("Dr thiago", 123, disciplinasDoDrThiago);
 
 
     @Test
