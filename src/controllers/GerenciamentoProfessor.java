@@ -11,8 +11,8 @@ public class GerenciamentoProfessor {
     private Teacher professor;
     private Map<Integer, ArrayList<Discipline>> classes = new HashMap<>();
 
-    public GerenciamentoProfessor(Teacher professor){
-        this.professor = professor;
+    public GerenciamentoProfessor(String name, Integer matricula, ArrayList<Discipline> disciplines){
+        this.professor = new Teacher(name, matricula, disciplines);
         classes.put(professor.getMatricula(), this.professor.getDisciplines());
     }
 

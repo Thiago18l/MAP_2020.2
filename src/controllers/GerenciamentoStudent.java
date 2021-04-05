@@ -1,15 +1,17 @@
 package controllers;
 
+import entities.Discipline;
 import entities.Student;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class GerenciamentoStudent {
     private Student student;
 
 
-    public GerenciamentoStudent(Student student){
-        this.student = student;
+    public GerenciamentoStudent(String name, Integer matricula,Discipline[] disciplinas){
+        this.student = new Student(name, matricula, disciplinas);
     }
 
     public String[] getHorarios() {

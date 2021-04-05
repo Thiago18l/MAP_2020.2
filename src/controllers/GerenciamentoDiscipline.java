@@ -10,13 +10,16 @@ public class GerenciamentoDiscipline {
     private ArrayList<Student> estudantes = new ArrayList<>();
     private Discipline disciplina;
 
-    public GerenciamentoDiscipline(Discipline disciplina){
-        this.disciplina = disciplina;
+    public GerenciamentoDiscipline(String name, String date){
+        this.disciplina = new Discipline(name, date);
     }
 
     public void addStudent(String nome, Integer matricula, Discipline[] disciplinas) {
         estudantes.add(new Student(nome, matricula, disciplinas));
         this.NumberOfStudents += 1;
+    }
+    public Discipline getDisciplina() {
+        return this.disciplina;
     }
     public ArrayList<Student> getStudent() {
         return this.estudantes;
