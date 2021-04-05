@@ -20,7 +20,6 @@ public class AlunosTest {
 
     GerenciamentoStudent gerenciaRafa = new GerenciamentoStudent(Rafa);
     GerenciamentoStudent gerenciaThiago = new GerenciamentoStudent(Thiago);
-
     @Test
     public void DisciplinasDeUmAluno() throws Exception {
         DisciplinasdeThiago[0] = MAP;
@@ -32,7 +31,6 @@ public class AlunosTest {
         Assertions.assertEquals(expected, disciplina[0]);
         Assertions.assertEquals(expected, disciplinaThiago[0]);
     }
-
     @Test
     public void QuaisHorariosDeUmAluno () throws Exception {
         Discipline[] disciplinaJoao = new Discipline[1];
