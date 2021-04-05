@@ -9,32 +9,24 @@ import java.util.Arrays;
 public class main {
     public static void main(String[] args) {
 
-        //Disciplinas
-        Discipline MAP = new Discipline("MAP", "SEG 11:00");
-        Discipline APS = new Discipline("APS", "QUI 7:00");
 
         Discipline[] DisciplinasdeThiago = new Discipline[2];
         Discipline[] DisciplinasdeRafa = new Discipline[1];
 
-        GerenciamentoDiscipline gerenciamentoMAP = new GerenciamentoDiscipline(MAP);
-        GerenciamentoDiscipline gerenciamentoAPS = new GerenciamentoDiscipline(APS);
+        GerenciamentoDiscipline gerenciamentoMAP = new GerenciamentoDiscipline("MAP", "SEG 11:00");
+        GerenciamentoDiscipline gerenciamentoAPS = new GerenciamentoDiscipline("APS", "QUI 7:00");
 
-        //Alunos
-        Student Rafa = new Student("Rafinha", 1, DisciplinasdeRafa);
-      //  Student Thiago = new Student("Thiago", 12, DisciplinasdeThiago);
+        DisciplinasdeThiago[0] = gerenciamentoMAP.getDisciplina();
+        DisciplinasdeThiago[1] = gerenciamentoAPS.getDisciplina();
+        DisciplinasdeRafa[0] = gerenciamentoMAP.getDisciplina();
 
-        DisciplinasdeThiago[0] = MAP;
-        DisciplinasdeThiago[1] = APS;
-        DisciplinasdeRafa[0] = MAP;
-
-        GerenciamentoStudent gerenciamentoRafa = new GerenciamentoStudent(Rafa);
+        GerenciamentoStudent gerenciamentoRafa = new GerenciamentoStudent("Rafinha", 1, DisciplinasdeRafa);
 
         //Professor
         ArrayList<Discipline> disciplinasDoDrThiago = new ArrayList<>();
-        disciplinasDoDrThiago.add(MAP);
-        disciplinasDoDrThiago.add(APS);
-        Teacher professor = new Teacher("Dr thiago", 123, disciplinasDoDrThiago);
-        GerenciamentoProfessor gerenciamentoP = new GerenciamentoProfessor(professor);
+        disciplinasDoDrThiago.add(gerenciamentoMAP.getDisciplina());
+        disciplinasDoDrThiago.add(gerenciamentoAPS.getDisciplina());
+        GerenciamentoProfessor gerenciamentoP = new GerenciamentoProfessor("Dr thiago", 123, disciplinasDoDrThiago);
 
 
         //Gerenciamento de disciplinas = Adição de alunos
@@ -59,6 +51,5 @@ public class main {
 
         //Horário de um aluno
         System.out.println(Arrays.toString(gerenciamentoRafa.getHorarios()));
-
     }
 }
