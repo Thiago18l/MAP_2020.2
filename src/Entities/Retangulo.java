@@ -2,7 +2,7 @@ package Entities;
 
 import utils.FiguraGeometrica;
 
-public class Retangulo implements FiguraGeometrica {
+public class Retangulo extends FiguraGeometrica {
     private int altura;
     private int largura;
 

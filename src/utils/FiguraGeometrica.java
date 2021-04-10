@@ -1,6 +1,6 @@
 package utils;
 
-public interface FiguraGeometrica {
-    int calcularPerimetro ();
-    int calcularArea ();
+public abstract class FiguraGeometrica {
+    public abstract int calcularPerimetro ();
+    public abstract int calcularArea ();
 }

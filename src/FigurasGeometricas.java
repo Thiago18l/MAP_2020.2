@@ -44,7 +44,7 @@ public class FigurasGeometricas {
         if (tipoDaFigura == -1){
             perimetro = (2 * alturaRetangulo) + (2 * larguraRetangulo);
             System.out.println("O per�metro do ret�ngulo �: " + perimetro);
-        }else if (tipoDaFigura == 0){
+        }else if (tipoDaFigura == 0) {
             perimetro = 4 * larguraQuadrado;
             System.out.println("O per�metro do quadrado �: " + perimetro);
         }else if (tipoDaFigura == 1){
@@ -55,7 +55,6 @@ public class FigurasGeometricas {
         }else{
             perimetro = -2658;
         }
-        tu me ama
         return perimetro;
     }
 
